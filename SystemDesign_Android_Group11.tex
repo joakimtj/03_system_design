@@ -68,6 +68,20 @@
 
 \section{Navigation}
 
+Our app is comprised of four main screens.
+\begin{itemize}
+    \item Main Screen
+    \item Chat
+    \item Settings/Profile
+    \item Create / Join
+\end{itemize}
+
+The main screen will list your currently active chats -- as well as when they are set to expire. A floating action button is present that will allow you to create a chat or join an existing one.
+
+The settings/profile screen is where you will select your display name, your tripcode, your chat bubble customization and your picture. (optional)
+
+The create / join screen allows you to enter a code, if that code is in use (e.g., a chat is actively using that code), you will join it, if not, you will create a new chat. You can also join existing chats using a QR code.
+\\\\
 Below is a graph representation of the app's navigation. The screens are unlikely to change much from the project proposal outside of changes made to comport with Material Design principles.
 \\\\
 \begin{tikzpicture}[
@@ -116,4 +130,42 @@ We plan to source most art assets externally if we deviate from this we will, of
     \item Material Design symbols for common actions.
     \item Sound effects (if implemented). E.g. push notifications.
 \end{enumerate}
+
+\section{Classes}
+We intend to implement these classes.
+\begin{verbatim}
+    MainActivity: Entry point of the app.
+    
+    WelcomeViewModel: Handles logic for joining/creating rooms.
+    
+    ChatViewModel: Manages chat messages and room data.
+    
+    ChatRepository: Interacts with Firebase services.
+    
+    User: Data class for user information (nickname, tripcode).
+    
+    ChatRoom: Data class for room information.
+    
+    Message: Data class for chat messages.
+    
+    TripcodeGenerator: Utility class for generating tripcodes.
+    
+    DateTimeUtils: Utility class for handling date/time operations.
+    
+    FirebaseManager: Singleton for initializing and accessing Firebase services.
+    \end{verbatim}
+This is not an exhaustive list and there may be more that we are missing but those will be documented as we add them.
+
+\newpage
+\section{External libraries/dependencies}
+Here are the external libraries that we intend to use. We may find better alternatives as we develop the app.
+
+\begin{itemize}
+    \item Firebase SDK
+    \item Jetpack Compose
+    \item Jetpack Navigation
+    \item Kotlin Coroutines
+    \item Hilt
+    \item Coil
+\end{itemize}
 \end{document}
